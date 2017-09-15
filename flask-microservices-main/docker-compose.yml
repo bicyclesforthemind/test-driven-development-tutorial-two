@@ -4,7 +4,7 @@ services:
 
   users-db:
     container_name: users-db
-    build: ./project/db
+    build: https://github.com/bicyclesforthemind/test-driven-development-tutorial.git#master:project/db
     ports:
       - 5432:5432
     environment:
@@ -15,9 +15,7 @@ services:
 
   users-service:
     container_name: users-service
-    build: .
-    volumes:
-      - '.:/usr/src/app'
+    build: https://github.com/bicyclesforthemind/test-driven-development-tutorial.git
     ports:
       - 5001:5000
     environment:

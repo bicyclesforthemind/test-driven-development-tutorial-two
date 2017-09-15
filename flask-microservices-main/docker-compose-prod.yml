@@ -4,7 +4,7 @@ services:
 
   users-db:
     container_name: users-db
-    build: ./project/db
+    build: https://github.com/bicyclesforthemind/test-driven-development-tutorial.git#master:project/db
     ports:
       - 5432:5432
     environment:
@@ -15,7 +15,7 @@ services:
 
   users-service:
     container_name: users-service
-    build: .
+    build: https://github.com/bicyclesforthemind/test-driven-development-tutorial.git
     environment:
       - APP_SETTINGS=project.config.ProductionConfig
       - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_prod
